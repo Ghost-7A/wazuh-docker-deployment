@@ -1,3 +1,4 @@
+![Logo](https://miro.medium.com/v2/resize:fit:750/0*aIZxbsDU4eREgGf8.jpg)
 ### **Wazuh Docker Deployment**
 
 This repository contains the necessary configuration and steps for deploying Wazuh in a Docker environment. Wazuh is a comprehensive security monitoring platform, and in this setup, we use Docker to simplify its installation and management for single-node deployment.
