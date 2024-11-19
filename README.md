@@ -45,4 +45,5 @@ Step: 6
 
 Access the dashboard :
 https://localhost:443 (By default wazuh dashboard use the port 443 )
+
 Note: The default username and password for the Wazuh dashboard are `admin` and `SecretPassword`
