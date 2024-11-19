@@ -1,49 +1,32 @@
-# wazuh-docker-deployment
-Step:1
-```jsx
+Wazuh Docker Deployment
+This repository contains the necessary configuration and steps for deploying Wazuh in a Docker environment. Wazuh is a comprehensive security monitoring platform, and in this setup, we use Docker to simplify its installation and management for single-node deployment.
+
+Features:
+Docker-based Deployment: Easy-to-follow instructions for deploying Wazuh in a Docker container.
+Single-node Setup: Full installation with a single-node architecture for testing and development purposes.
+Dashboard Access: Secure and intuitive web-based dashboard to monitor and manage security alerts.
+Installation Steps:
+System Update: Ensure your system is up to date.
+
 sudo apt update && sudo apt upgrade -y
-```
+Clone the Wazuh Docker Repository: Clone the repository and checkout the appropriate version.
 
-Step:2
-
-Clone the Wazuh repository to your system:
-```jsx
-//Check the latest version from wazuh officel document
 git clone https://github.com/wazuh/wazuh-docker.git -b v4.9.1
-```
+Install Docker Compose: Install Docker Compose for easier management of multi-container applications.
 
-Step:3
-
-Install docker-compose
-```jsx
 sudo apt install docker-compose
-```
+Generate Certificates: Navigate to the single-node directory and run the certificate generator.
 
-Step:4
-
-Generate certificates:
-```jsx
-//change the directory
 cd /wazuh-docker/single-node
-
-//Execute the following command to get the certificates:
 sudo docker-compose -f generate-indexer-certs.yml run --rm generator
-```
+Start the Deployment: Use Docker Compose to start Wazuh in the foreground or background.
 
-Step: 5
+sudo docker-compose up   # Foreground
+sudo docker-compose up -d # Background
+Access the Dashboard: Open your browser and go to https://localhost:443. The default login credentials are:
 
-Start the Wazuh single-node deployment using docker-compose:
-```jsx
-//Foreground:
-sudo docker-compose up
-
-//Background:
-sudo docker-compose up -d
-```
-
-Step: 6
-
-Access the dashboard :
-https://localhost:443 (By default wazuh dashboard use the port 443 )
-
-Note: The default username and password for the Wazuh dashboard are `admin` and `SecretPassword`
+Username: admin
+Password: SecretPassword
+Notes:
+This deployment is designed for development or testing environments. It is not intended for production use without further security hardening.
+For additional configurations or multi-node deployments, refer to the official Wazuh documentation.
